@@ -1,5 +1,5 @@
 # social_card-Dona0w0
-En este repo podrás ver la implementación de una bussines card en react, esta incluye
+En este repo podrás ver la implementación de una bussines card en react, esta incluye:
 *Foto
 *Nombre
 *Edad
