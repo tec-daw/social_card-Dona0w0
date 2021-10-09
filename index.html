@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>holiiii</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&display=swap" rel="stylesheet">
+
+</head>
+<body>
+		<div id="root"></div>
+		<script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+    	<script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+    	<script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+    	<script type="text/babel">
+    		const rootElement = document.getElementById('root');
+
+    		class Tarjeta extends React.Component { /* declarando que Tarjeta es un componente de react*/
+
+    			render() { /*genera la funcion render y con return se regresa el html*/
+    				return (
+    				<React.Fragment>
+    					
+						<div className="card">
+							<img id="perfil" src={this.props.fperfil}></img> {/* con this.props."algo" se recibe la referencia a algun elemento, 
+																				esten declarados en la llamada de render*/}
+							<div id="contenido">
+								<h2>{this.props.nombre}</h2>
+								<p>Edad: {this.props.edad}</p>
+								<p>Correo: {this.props.correo}</p>
+								<p>Carrera: {this.props.carrera}</p>
+								
+									<div className="iconos">
+								 		<a href={this.props.git}><img src="github.png"></img></a>
+								 		<a href={this.props.video}><img src="video.png"></img></a>
+								 		<a href={this.props.linkedin}><img src="linkedin.png"></img></a>
+									</div>
+							</div>
+						</div>
+					</React.Fragment>
+    						);
+    			}
+    		}
+
+    		ReactDOM.render(
+    		<Tarjeta 
+	    		nombre="Donají Díaz Zaragoza" 
+	    		edad="20"
+	    		correo="a01274449@itesm.mx"
+	    		carrera="ITIt"
+	    		fperfil="FPerfil.jpg" 
+	    		git="https://github.com/Dona0w0" 
+	    		video="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+	    		linkedin="https://www.linkedin.com/in/donaj%C3%AD-d%C3%ADaz-zaragoza-4533551bb/"
+	    		/* estos son los props utilizados en el render, al modificarlos tambien se modifica lo que mostrara en html*/	
+    		/>,
+    		rootElement
+    		)
+
+    	</script>
+
+</body>
+</html>
